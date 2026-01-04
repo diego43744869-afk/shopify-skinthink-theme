@@ -63,9 +63,7 @@
     },
     "header": {
       "type": "header",
-      "custom_css": [
-        "@media screen and (min-width: 750px) {.header__heading, .header__heading-link, h1.header__heading {justify-content: flex-start !important; text-align: left !important; margin-left: 0 !important; } .header {justify-content: space-between !important; }}"
-      ],
+      "custom_css": [],
       "settings": {
         "sticky_header": true,
         "link_hover_effect": "dot",
@@ -88,7 +86,7 @@
         "highlight_item": "Sale",
         "enable_custom_badge": false,
         "custom_badge_text": "15% off",
-        "highlight_item_color": "#de5757",
+        "highlight_item_color": "#108633",
         "header_transparent": false,
         "header_text_color": "white",
         "header_gradient": true

@@ -13,34 +13,6 @@
   "sections": {
     "popup": {
       "type": "popup",
-      "blocks": {
-        "popup-with-image": {
-          "type": "popup-with-image",
-          "disabled": true,
-          "settings": {
-            "position": "center-center",
-            "image": "shopify://shop_images/Heading_0965f924-5340-4b17-aa1a-e082b2e9d64f.png",
-            "height": "four-fifty-height",
-            "title": "JOIN THE #EGOSYSTEM",
-            "text": "<p><em><strong>Enjoy 10% off your first order </strong></em><em>and step into our system—where rituals, rewards, and real skin support come full circle.</em></p>",
-            "show_newsletter_form": true,
-            "extra_fields": "",
-            "button_text": "Subscribe",
-            "trigger": "delayed_10",
-            "target_url_enabled": true,
-            "target_url": "",
-            "target_referrer_enabled": false,
-            "target_referrer": "",
-            "target_device_enabled": false,
-            "target_device": "mobile",
-            "bg_color": "#f7e7df",
-            "text_color": "text-dark"
-          }
-        }
-      },
-      "block_order": [
-        "popup-with-image"
-      ],
       "settings": {}
     }
   },

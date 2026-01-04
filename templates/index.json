@@ -15,23 +15,23 @@
         "image": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/You_ve_already_trusted_Authentic_Ego_with_your_skin._Now_you_re_part_of_the_EgoSystem_where_every_formula_is_designed_to_support_the_complex_biology_of_adult_hormonal_and_reactive_ski_c457a73b-9c72-42b1-9ec8-92740f2d1dd9.png",
-            "image_mobile": "shopify://shop_images/Social_Post_-_NEW_Content_W_Call_outs_1.png",
+            "image": "shopify://shop_images/Black20_-_Banner_Desktop_68042f4a-fbc9-4a38-ac51-eab1389c9c1f.webp",
+            "image_mobile": "shopify://shop_images/Black20_-_Banner_Mobile.webp",
             "overlay_opacity": 0,
-            "content_width": 91,
+            "content_width": 20,
             "text_position": "left",
             "text_alignment": "text-left",
             "text_color": "text-dark",
-            "subheading": "THE FUTURE OF ACNE-CARE IS HERE",
-            "title": "<p>FORMULATED FOR REAL, REACTIVE SKIN</p>",
-            "heading_size": 110,
+            "subheading": "",
+            "title": "",
+            "heading_size": 100,
             "heading_highlight_type": "underline-hand-drawn",
             "highlight_color": "#fff7f2",
             "highlight_text_color": "#ffffff",
-            "text": "Discover the new science of skincare, built for breakout-prone skin.",
+            "text": "",
             "text_size": 70,
-            "stacked_button": true,
-            "button_1_text": "SHOP ALL PRODUCTS →",
+            "stacked_button": false,
+            "button_1_text": "",
             "button_1_link": "shopify://collections/all",
             "button_1_color": "btn--primary",
             "button_1_style": "btn--solid-border",
@@ -45,30 +45,30 @@
             "video_link": ""
           }
         },
-        "image_YnanPA": {
+        "image_RzxiJr": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/You_ve_already_trusted_Authentic_Ego_with_your_skin._Now_you_re_part_of_the_EgoSystem_where_every_formula_is_designed_to_support_the_complex_biology_of_adult_hormonal_and_reactive_ski_16c90fd2-7cda-412a-8ed8-5df98aa232ca.png",
-            "image_mobile": "shopify://shop_images/Website_-_Mobile_3_copy.png",
+            "image": "shopify://shop_images/Banner_-_Desktop_3.webp",
+            "image_mobile": "shopify://shop_images/Banner_-_Mobile_3.webp",
             "overlay_opacity": 10,
             "content_width": 80,
-            "text_position": "left",
-            "text_alignment": "text-left",
-            "text_color": "text-dark",
-            "subheading": "JUST DROPPED",
-            "title": "<p>THE EGO ESSENTIALS DUO</p>",
+            "text_position": "center",
+            "text_alignment": "text-center",
+            "text_color": "text-light",
+            "subheading": "",
+            "title": "",
             "heading_size": 150,
             "heading_highlight_type": "underline-hand-drawn",
-            "highlight_color": "#fff7f2",
-            "highlight_text_color": "#20150f",
-            "text": "Our simple 2 step routine for clear, hydrated skin...",
-            "text_size": 100,
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "text": "",
+            "text_size": 70,
             "stacked_button": false,
-            "button_1_text": "SHOP THE NEW DUO →",
-            "button_1_link": "shopify://products/ego-essentialsego-essentials",
-            "button_1_color": "btn--secondary",
+            "button_1_text": "",
+            "button_1_link": "shopify://collections/all",
+            "button_1_color": "btn--white",
             "button_1_style": "btn--solid-border",
-            "button_1_size": "btn--large",
+            "button_1_size": "btn--medium",
             "button_2_text": "",
             "button_2_link": "",
             "button_2_color": "btn--black",
@@ -81,7 +81,7 @@
       },
       "block_order": [
         "image",
-        "image_YnanPA"
+        "image_RzxiJr"
       ],
       "custom_css": [],
       "settings": {
@@ -218,7 +218,6 @@
           "disabled": true,
           "settings": {
             "width": "33.33",
-            "image": "shopify://shop_images/AE-ProductListingContent.png",
             "overlay_opacity": 5,
             "text_position": "bottom-left",
             "subheading": "",
@@ -236,7 +235,6 @@
           "disabled": true,
           "settings": {
             "width": "33.33",
-            "image": "shopify://shop_images/5_041dbbf6-6255-4930-86ec-bcca45ab6fd4.png",
             "overlay_opacity": 5,
             "text_position": "bottom-left",
             "subheading": "",
@@ -254,7 +252,6 @@
           "disabled": true,
           "settings": {
             "width": "33.33",
-            "image": "shopify://shop_images/duo.png",
             "overlay_opacity": 0,
             "text_position": "bottom-left",
             "subheading": "",
@@ -662,8 +659,6 @@
         "height": "full-height",
         "enable_mobile_height": true,
         "mobile_height": "four-fifty-height-mobile",
-        "image": "shopify://shop_images/You_ve_already_trusted_Authentic_Ego_with_your_skin._Now_you_re_part_of_the_EgoSystem_where_every_formula_is_designed_to_support_the_complex_biology_of_adult_hormonal_and_reactive_ski_2da9af51-0fe1-47a0-b75b-9ca886148578.png",
-        "image_mobile": "shopify://shop_images/Untitled_design_14_copy_3.png",
         "overlay_opacity": 10,
         "transition": "fade",
         "enable_zoom_animation": false,
@@ -736,8 +731,6 @@
         "height": "four-fifty-height",
         "enable_mobile_height": false,
         "mobile_height": "four-fifty-height-mobile",
-        "image": "shopify://shop_images/Email_Marketing_block_1200_x_550_1800_x_900_px.png",
-        "image_mobile": "shopify://shop_images/Untitled_design_14_copy_4.png",
         "overlay_opacity": 0,
         "transition": "fade",
         "enable_zoom_animation": false,
@@ -1131,7 +1124,6 @@
         "layout_mobile": "image_content",
         "layout_gap": 64,
         "layout_gap_mobile": 32,
-        "image": "shopify://shop_images/Untitled_design_14_copy_5.png",
         "image_radius": 6,
         "image_border_thickness": 0,
         "image_ratio": "original",
@@ -1262,7 +1254,6 @@
           "settings": {
             "star_rating": 5,
             "enable_border": false,
-            "image": "shopify://shop_images/Untitled_design_14_f96dbdce-1d92-4063-9bdd-bb4631598ce8.png",
             "aspect_ratio": 0.8,
             "heading": "I don’t think it would be an exaggeration to say that this moisturiser saved my skin. I had severe dermatitis/ eczema for a good few weeks, it wasn’t until I started using Super Sensa (alongside my steroid) that it calmed down and now my skin is so much smoother, clearer and more hydrated than even before my skin condition.",
             "text_size": 125,
@@ -1289,7 +1280,6 @@
           "settings": {
             "star_rating": 5,
             "enable_border": false,
-            "image": "shopify://shop_images/Untitled_design_14_copy.png",
             "aspect_ratio": 0.8,
             "heading": "It has now been a full month of using the new super sensa! My acne scars are fading, my skin feels fresh, and it has been almost of month of no acne, NONE. I trust that all the ingredients are serving me and this will continue to be my holy grail! Praise authentic ego!",
             "text_size": 125,
@@ -1390,8 +1380,6 @@
         "height": "six-fifty-height",
         "enable_mobile_height": false,
         "mobile_height": "four-fifty-height-mobile",
-        "image": "shopify://shop_images/You_ve_already_trusted_Authentic_Ego_with_your_skin._Now_you_re_part_of_the_EgoSystem_where_every_formula_is_designed_to_support_the_complex_biology_of_adult_hormonal_and_reactive_ski_4b0fe37e-c2c8-40af-90f1-6af62fa291e5.png",
-        "image_mobile": "shopify://shop_images/Social_Post_-_NEW_Content_W_Call_outs.png",
         "overlay_opacity": 10,
         "transition": "fade",
         "enable_zoom_animation": false,
@@ -1469,7 +1457,6 @@
         "layout": "inline",
         "image_location": "left",
         "image_width": "standard",
-        "image": "shopify://shop_images/eb5a5b_b95cacbe-f349-41e9-85cc-4d25becdca04.png",
         "block_bg_color": "#de5757",
         "text_color": "text-light",
         "bg_color": "#20150f",
@@ -1486,8 +1473,6 @@
         "image_jfF8Wq": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/You_ve_already_trusted_Authentic_Ego_with_your_skin._Now_you_re_part_of_the_EgoSystem_where_every_formula_is_designed_to_support_the_complex_biology_of_adult_hormonal_and_reactive_ski_b96a4b76-c72e-4e63-b172-5d465e780608.png",
-            "image_mobile": "shopify://shop_images/Social_Post_-_NEW_Content_W_Call_outs_1.png",
             "overlay_opacity": 0,
             "content_width": 91,
             "text_position": "left",
@@ -1519,8 +1504,6 @@
         "image_hDawDL": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/You_ve_already_trusted_Authentic_Ego_with_your_skin._Now_you_re_part_of_the_EgoSystem_where_every_formula_is_designed_to_support_the_complex_biology_of_adult_hormonal_and_reactive_ski_b59e1f0f-5e4b-41f3-9847-44a4b62cb4ed.png",
-            "image_mobile": "shopify://shop_images/Website_-_Mobile_3_copy.png",
             "overlay_opacity": 10,
             "content_width": 80,
             "text_position": "center",
@@ -1616,29 +1599,6 @@
     },
     "1753114793499346c1": {
       "type": "apps",
-      "blocks": {
-        "instafeed_app_block_zNPeXG": {
-          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
-          "settings": {
-            "title": "",
-            "title_color": "",
-            "title_size_v2": 0,
-            "alignment": "center",
-            "instafeed_margin_top": 0,
-            "instafeed_margin_bottom": 0,
-            "instafeed_margin_sides": 0,
-            "show_instagram_link": true,
-            "link_alignment": "left",
-            "link_color": "#000000",
-            "background_color": "",
-            "feed_id": "",
-            "html_area": ""
-          }
-        }
-      },
-      "block_order": [
-        "instafeed_app_block_zNPeXG"
-      ],
       "settings": {
         "bg_color": "#ffffff",
         "width": "wrapper--full-padded",

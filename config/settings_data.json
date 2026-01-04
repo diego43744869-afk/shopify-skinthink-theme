@@ -9,10 +9,11 @@
  */
 {
   "current": {
+    "color_body_bg": "#0d0d0d",
     "color_headings": "#20150f",
-    "color_body_text": "#20150f",
-    "color_accent": "#f7e7df",
-    "color_borders_and_lines": "#20150f",
+    "color_body_text": "#ffffff",
+    "color_accent": "#ffffff",
+    "color_borders_and_lines": "#0d0d0d",
     "type_heading_font": "rubik_n5",
     "heading_size": 80,
     "text_size": 105,
@@ -26,7 +27,7 @@
     "button_style": "rounded",
     "button_letter_spacing": 75,
     "button_caps": true,
-    "primary_buttons_color": "#20150f",
+    "primary_buttons_color": "#0d0d0d",
     "secondary_buttons_color": "#ffffff",
     "product_grid_heading_size": 130,
     "product_grid_text_size": 115,
@@ -45,6 +46,9 @@
     "product_bold_price": true,
     "max_inventory": 5,
     "enable_subscriptions_selectors": false,
+    "cart_type": "page",
+    "cart_icon": "bag",
+    "enable_cart_animation": true,
     "enable_cart_notes": true,
     "empty_cart_heading": "",
     "empty_cart_heading_size": 120,
@@ -103,61 +107,7 @@
     "checkout_accent_color": "#edb3f2",
     "checkout_button_color": "#fbcaff",
     "checkout_error_color": "#d02e2e",
-    "content_for_index": [],
-    "blocks": {
-      "10746902591489815047": {
-        "type": "shopify://apps/rt-google-fonts-custom-fonts/blocks/app-embed/2caf2c68-0038-455e-b0b9-066a7c2ad923",
-        "disabled": false,
-        "settings": {}
-      },
-      "1232542678405107163": {
-        "type": "shopify://apps/instafeed/blocks/head-block/c447db20-095d-4a10-9725-b5977662c9d5",
-        "disabled": false,
-        "settings": {}
-      },
-      "14060646107696862457": {
-        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-        "disabled": false,
-        "settings": {}
-      },
-      "15588394620387169604": {
-        "type": "shopify://apps/subi-subscriptions/blocks/app-embed-block/bc0dba25-cd46-4841-bea4-6bdfe9ac815f",
-        "disabled": false,
-        "settings": {}
-      },
-      "15181020662106344915": {
-        "type": "shopify://apps/judge-me-reviews/blocks/popup_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-        "disabled": false,
-        "settings": {}
-      },
-      "11560147490181472608": {
-        "type": "shopify://apps/rivo-loyalty-rewards-referrals/blocks/app-embed/580e9665-b2cd-4dbc-b6ba-6445ac9e6871",
-        "disabled": false,
-        "settings": {}
-      },
-      "12120936241911852800": {
-        "type": "shopify://apps/judge-me-reviews/blocks/reviews_tab/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-        "disabled": false,
-        "settings": {
-          "position": "right"
-        }
-      },
-      "4735065489610544183": {
-        "type": "shopify://apps/ga-gdpr-cookie-consent-privacy/blocks/app-embeded/bfd074ea-697a-4267-b8cd-e53d5d340a6a",
-        "disabled": false,
-        "settings": {}
-      },
-      "12526071353035850722": {
-        "type": "shopify://apps/amp-back-in-stock/blocks/app-embed/bfa6a8c4-24e2-411a-9396-e35031b33f34",
-        "disabled": false,
-        "settings": {}
-      },
-      "855628211100114053": {
-        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
-        "disabled": false,
-        "settings": {}
-      }
-    }
+    "content_for_index": []
   },
   "installed_preset_name": "Palo Alto",
   "presets": {
@@ -643,6 +593,12 @@
     }
   },
   "platform_customizations": {
-    "custom_css": []
+    "custom_css": [
+      "/* Esconde o menu no desktop (telas maiores que 749px) */@media screen and (min-width: 750px) {.header__menu-item, .header__inline-menu, nav.header__inline-menu {display: none !important; }}",
+      "/* Garante que o menu mobile apareça em telas pequenas */@media screen and (max-width: 749px) {.header__icon--menu, .mobile-nav-wrapper, details[open] .header__menu-item {display: block !important; }}",
+      "/* Remove o ícone de conta no desktop */@media screen and (min-width: 750px) {.header__icon--account, a[href=\"/account\"] {display: none !important; }}",
+      "/* Logo à esquerda no desktop */@media screen and (min-width: 750px) {.header__heading, .header__heading-link, h1.header__heading {justify-content: flex-start !important; text-align: left !important; margin-left: 0 !important; } .header {justify-content: space-between !important; }}",
+      "/* Logo centralizada no mobile */@media screen and (max-width: 749px) {.header__heading, .header__heading-link, h1.header__heading {justify-content: center !important; text-align: center !important; margin: 0 auto !important; }}"
+    ]
   }
 }

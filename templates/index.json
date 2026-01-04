@@ -102,7 +102,7 @@
     "section_custom_html_xQTTGA": {
       "type": "section-custom-html",
       "custom_css": [
-        ".security-badge-anchor {position: absolute; bottom: -60px; right: 35%; z-index: 30; transform: translateY(-140px);}"
+        ".security-badge-anchor {position: absolute; bottom: -60px; right: 35%; z-index: 30; transform: translateY(-180px);}"
       ],
       "name": "Custom code",
       "settings": {
@@ -111,10 +111,40 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
+    },
+    "section_collection_trKpaa": {
+      "type": "section-collection",
+      "name": "Featured collection",
+      "settings": {
+        "collection": "maquinas-premium",
+        "products_layout": "grid",
+        "products_limit": 9,
+        "products_per_row_on_desktop": 3,
+        "columns_mobile": "1",
+        "text_alignment": "text-center",
+        "title": "<p><strong>MÁQUINAS PREMIUM</strong></p>",
+        "heading_size": 135,
+        "heading_highlight_type": "underline",
+        "highlight_color": "#ffffff",
+        "highlight_text_color": "#ffffff",
+        "text": "",
+        "text_size": 100,
+        "button_position": "bottom",
+        "button_text": "VER MÁQUINAS PREMIUM",
+        "button_color": "btn--primary",
+        "button_style": "btn--text",
+        "button_size": "btn--medium",
+        "bg_color": "#ffffff",
+        "enable_slider_mobile": true,
+        "width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
     }
   },
   "order": [
     "section-slideshow",
-    "section_custom_html_xQTTGA"
+    "section_custom_html_xQTTGA",
+    "section_collection_trKpaa"
   ]
 }

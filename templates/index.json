@@ -15,7 +15,7 @@
         "image": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Black20_-_Banner_Desktop_68042f4a-fbc9-4a38-ac51-eab1389c9c1f.webp",
+            "image": "shopify://shop_images/Black20_-_Banner_Desktop.webp",
             "image_mobile": "shopify://shop_images/Black20_-_Banner_Mobile.webp",
             "overlay_opacity": 0,
             "content_width": 20,
@@ -83,15 +83,14 @@
         "image",
         "image_RzxiJr"
       ],
-      "custom_css": [],
       "settings": {
-        "slide_height": "seven-fifty-height",
+        "slide_height": "original-height",
         "enable_mobile_height": true,
-        "mobile_slide_height": "five-fifty-height-mobile",
-        "show_nav_dots": false,
-        "show_nav_arrows": false,
+        "mobile_slide_height": "original-height-mobile",
+        "show_nav_dots": true,
+        "show_nav_arrows": true,
         "show_arrow_down": false,
-        "autoplay": true,
+        "autoplay": false,
         "duration": 3,
         "transition": "fade",
         "enable_zoom_animation": false,
@@ -99,78 +98,15 @@
         "increase_border_radius": false
       }
     },
-    "section-countdown": {
-      "type": "section-countdown",
-      "blocks": {
-        "subheading": {
-          "type": "subheading",
-          "settings": {
-            "text": "<p>Shop Before It Ends</p>",
-            "size": 125
-          }
-        },
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "text": "<h1>Save On Our  Bestsellers</h1>",
-            "size": 135,
-            "heading_highlight_type": "italics",
-            "highlight_color": "#f4e5e5",
-            "highlight_text_color": "#000000"
-          }
-        },
-        "timer": {
-          "type": "timer",
-          "settings": {
-            "end_date": "2025-8-30",
-            "end_time": "11:59",
-            "period": "am",
-            "end_message": "",
-            "digit_size": 160,
-            "unit_size": 145,
-            "bg_color": "rgba(0,0,0,0)",
-            "bg_opacity": 15,
-            "text_color": "text-dark"
-          }
-        },
-        "button": {
-          "type": "button",
-          "settings": {
-            "button_1_text": "Shop the sale",
-            "button_1_link": "shopify://collections/all",
-            "button_1_color": "btn--black",
-            "button_1_style": "btn--text",
-            "button_1_size": "btn--medium",
-            "button_2_text": "",
-            "button_2_link": "",
-            "button_2_color": "btn--black",
-            "button_2_style": "btn--solid",
-            "button_2_size": "btn--small"
-          }
-        }
-      },
-      "block_order": [
-        "subheading",
-        "heading",
-        "timer",
-        "button"
-      ],
-      "disabled": true,
+    "section_custom_html_xQTTGA": {
+      "type": "section-custom-html",
+      "custom_css": [],
+      "name": "Custom code",
       "settings": {
-        "layout_style": "inline",
-        "text_alignment": "center",
-        "height": "150",
-        "enable_mobile_height": true,
-        "mobile_height": "300",
-        "overlay_opacity": 0,
-        "enable_zoom_animation": true,
-        "bg_color": "#f7e7df",
-        "gradient": "",
-        "text_color": "text-dark",
-        "text_width": "normal",
-        "width": "wrapper--full-padded",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "custom_code": "",
+        "width": "wrapper",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "section-text": {
@@ -316,6 +252,7 @@
       "block_order": [
         "text-0"
       ],
+      "disabled": true,
       "custom_css": [
         ".marquee-text {font-family: \"CommuterSans Regular\", sans-serif !important; font-weight: 400;}"
       ],
@@ -343,6 +280,7 @@
     },
     "section_collection_9CGwHX": {
       "type": "section-collection",
+      "disabled": true,
       "name": "Featured collection",
       "settings": {
         "collection": "all",
@@ -1021,50 +959,6 @@
         "border_thickness": 0,
         "section_radius": 0,
         "lazy": true
-      }
-    },
-    "section_custom_content_ygdtUU": {
-      "type": "section-custom-content",
-      "blocks": {
-        "text_hAjxAj": {
-          "type": "text",
-          "settings": {
-            "text_position": "center",
-            "top_image_width": 100,
-            "text_color": "text-light",
-            "subheading": "Skincare rewards, reimagined...",
-            "title": "WELCOME TO THE #EGOSYSTEM",
-            "heading_size": 100,
-            "text": "<p>This isn’t your average points program. The #EgoSystem is a science-backed, self-led loyalty ritual built for those who glow with intention. Earn #SelfCareCredits every time you engage, shop, or share—and unlock exclusive perks, early drops, and ego-elevated extras just for showing up.</p><p>Because skincare that supports you... should reward you, too.</p>",
-            "text_size": 100,
-            "button_text": "",
-            "button_link": "",
-            "button_color": "btn--black",
-            "button_style": "btn--solid",
-            "button_size": "btn--medium",
-            "button_2_text": "",
-            "button_2_link": "",
-            "button_2_color": "btn--white",
-            "button_2_style": "btn--solid-border",
-            "button_2_size": "btn--medium",
-            "bg_color": ""
-          }
-        }
-      },
-      "block_order": [
-        "text_hAjxAj"
-      ],
-      "name": "Custom content",
-      "settings": {
-        "height": "one-fifty-height",
-        "enable_mobile_height": true,
-        "mobile_height": "three-fifty-height-mobile",
-        "bg_color": "#20150f",
-        "reverse_blocks": false,
-        "width": "wrapper",
-        "add_gutter": false,
-        "padding_top": 22,
-        "padding_bottom": 0
       }
     },
     "ss_steps_11_WctdHG": {
@@ -1802,7 +1696,7 @@
   },
   "order": [
     "section-slideshow",
-    "section-countdown",
+    "section_custom_html_xQTTGA",
     "section-text",
     "section-grid",
     "section-marquee-0",
@@ -1812,7 +1706,6 @@
     "section_banner_image_C37en6",
     "section_banner_image_DBg3k4",
     "ss_comparison_table_23_j7igFa",
-    "section_custom_content_ygdtUU",
     "ss_steps_11_WctdHG",
     "section_list_butttons_ranjmc",
     "section-testimonials-with-images",

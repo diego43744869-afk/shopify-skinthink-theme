@@ -101,8 +101,9 @@
     },
     "section_custom_html_xQTTGA": {
       "type": "section-custom-html",
+      "disabled": true,
       "custom_css": [
-        ".security-badge-anchor {position: absolute; bottom: -60px; right: 35%; z-index: 30; transform: translateY(-180px);}"
+        ".security-badge-anchor {position: absolute; bottom: -60px; right: 35%; z-index: 30; transform: translateY(-10px);}"
       ],
       "name": "Custom code",
       "settings": {

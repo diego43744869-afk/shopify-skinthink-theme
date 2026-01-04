@@ -29,142 +29,97 @@
             "padding_bottom": 20
           }
         },
-        "inventory_countdown": {
-          "type": "inventory_countdown",
-          "disabled": true,
-          "settings": {
-            "max_inventory": 8,
-            "hide_inventory_count": false,
-            "padding_bottom": 16
-          }
-        },
-        "divider": {
-          "type": "divider",
-          "disabled": true,
-          "settings": {
-            "show_line": false,
-            "padding_bottom": 24
-          }
-        },
-        "icon": {
-          "type": "icon",
-          "disabled": true,
-          "settings": {
-            "icon_name": "none",
-            "icon_color": "",
-            "icon_width": 20,
-            "icon_text": "Free shipping over $99",
-            "text_size": 70,
-            "width": "half",
-            "text_alignment": "left",
-            "bg_color": "rgba(0,0,0,0)",
-            "padding_bottom": 32
-          }
-        },
-        "icon-0": {
-          "type": "icon",
-          "settings": {
-            "icon_name": "none",
-            "icon_color": "",
-            "icon_width": 20,
-            "icon_text": "Free shipping over $99",
-            "text_size": 70,
-            "width": "half",
-            "text_alignment": "left",
-            "bg_color": "#ffffff",
-            "padding_bottom": 20
-          }
-        },
         "form": {
           "type": "form",
           "settings": {
             "show_labels": true,
             "show_quantity": true,
             "show_payment_button": true,
-            "enable_subscriptions_selectors": true,
-            "padding_bottom": 32
+            "enable_subscriptions_selectors": false,
+            "padding_bottom": 26
           }
         },
-        "timer": {
-          "type": "timer",
-          "disabled": true,
+        "icon_xxaMab": {
+          "type": "icon",
           "settings": {
-            "end_date": "2025-8-30",
-            "end_time": "11:59",
-            "period": "am",
-            "end_message": "",
-            "digits_size": 65,
-            "heading": "Limited time offer",
-            "heading_size": 95,
-            "heading_style": "font-heading",
-            "text": "<p>Exclusive styles at 30% off, only for three days!</p>",
-            "text_size": 85,
-            "bg_color": "#f7f6f4",
-            "text_color": "text-dark",
-            "text_align": "text-center",
+            "icon_name": "dollar-sign",
+            "icon_color": "#138d36",
+            "icon_width": 23,
+            "icon_text": "Promoção de Cashback: Compre e receba R$250 de volta",
+            "text_size": 90,
+            "width": "full",
+            "text_alignment": "left",
+            "bg_color": "#ffffff",
             "padding_bottom": 20
           }
         },
-        "fit-guide": {
-          "type": "fit-guide",
-          "disabled": true,
+        "icon_aAHWTE": {
+          "type": "icon",
           "settings": {
-            "heading": "Fit",
-            "selected_segment": "4",
-            "left_label": "Small",
-            "middle_label": "True to size",
-            "right_label": "Large",
-            "fit_color": "",
+            "icon_name": "check",
+            "icon_color": "",
+            "icon_width": 23,
+            "icon_text": "99 vendidos nas últimas 3 horas",
+            "text_size": 90,
+            "width": "full",
+            "text_alignment": "left",
+            "bg_color": "",
             "padding_bottom": 20
           }
         },
-        "icon-1": {
-          "type": "icon",
+        "custom_code_eqfEFf": {
+          "type": "custom_code",
           "settings": {
-            "icon_name": "mail",
-            "icon_color": "",
-            "icon_width": 20,
-            "icon_text": "Free shipping on orders over $100",
-            "text_size": 80,
-            "width": "full",
-            "text_alignment": "left",
-            "bg_color": "rgba(0,0,0,0)",
-            "padding_bottom": 16
+            "custom_code": "<style>\n.installments-wrapper {\n  background: #e8efd6;\n  border-radius: 10px;\n  margin-top: 14px;\n  font-family: Arial, sans-serif;\n  overflow: hidden;\n}\n\n.installments-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 14px;\n  cursor: pointer;\n  font-weight: bold;\n}\n\n.installments-header span {\n  font-size: 18px;\n  transition: transform 0.3s ease;\n}\n\n.installments-wrapper.open .installments-header span {\n  transform: rotate(180deg);\n}\n\n.installments-content {\n  max-height: 0;\n  overflow: hidden;\n  transition: max-height 0.4s ease;\n  padding: 0 14px;\n}\n\n.installments-wrapper.open .installments-content {\n  max-height: 500px;\n  padding-bottom: 14px;\n}\n\n.installments-grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 6px 20px;\n  font-size: 14px;\n}\n\n.pix-box {\n  margin-top: 12px;\n  background: #dfead0;\n  border-radius: 8px;\n  padding: 10px;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n\n.pix-tag {\n  background: #4caf50;\n  color: #fff;\n  font-size: 12px;\n  padding: 4px 8px;\n  border-radius: 6px;\n  font-weight: bold;\n}\n</style>\n\n<div class=\"installments-wrapper\" onclick=\"this.classList.toggle('open')\">\n  <div class=\"installments-header\">\n    <div>Parcelas no cartão</div>\n    <span>▼</span>\n  </div>\n\n  <div class=\"installments-content\">\n    <div class=\"installments-grid\">\n      <div>1x de R$ 397,00 sem juros</div>\n      <div>7x de R$ 63,69</div>\n\n      <div>2x de R$ 198,50 sem juros</div>\n      <div>8x de R$ 56,53</div>\n\n      <div>3x de R$ 132,00 sem juros</div>\n      <div>9x de R$ 50,96</div>\n\n      <div>4x de R$ 106,77</div>\n      <div>10x de R$ 46,51</div>\n\n      <div>5x de R$ 86,66</div>\n      <div>11x de R$ 42,89</div>\n\n      <div>6x de R$ 73,25</div>\n      <div>12x de R$ 39,85</div>\n    </div>",
+            "padding_bottom": 0
           }
         },
-        "icon-2": {
-          "type": "icon",
-          "disabled": true,
+        "custom_code_YyyyPg": {
+          "type": "custom_code",
           "settings": {
-            "icon_name": "recycle-circle",
-            "icon_color": "",
-            "icon_width": 20,
-            "icon_text": "Free 30 day returns",
-            "text_size": 80,
-            "width": "full",
-            "text_alignment": "left",
-            "bg_color": "rgba(0,0,0,0)",
-            "padding_bottom": 12
+            "custom_code": "<style>\n#pix-lock {\n  all: unset;\n  display: block;\n  margin-top: 12px;\n}\n\n#pix-lock .pix-box {\n  background: #e8efd6;\n  border-radius: 10px;\n  padding: 14px;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  font-family: Arial, sans-serif;\n}\n\n#pix-lock .pix-tag {\n  background: #4caf50;\n  color: #ffffff;\n  font-size: 12px;\n  padding: 4px 8px;\n  border-radius: 6px;\n  font-weight: bold;\n}\n\n#pix-lock .pix-value {\n  font-size: 18px;\n  font-weight: bold;\n  color: #1a1a1a;\n}\n</style>\n\n<div id=\"pix-lock\">\n  <div class=\"pix-box\">\n    <div class=\"pix-tag\">PIX 10% OFF</div>\n    <div class=\"pix-value\">R$ 357,30</div>\n  </div>\n</div>",
+            "padding_bottom": 0
+          }
+        },
+        "icon_row_3Nrc4n": {
+          "type": "icon_row",
+          "settings": {
+            "icon_name_1": "truck",
+            "icon_color_1": "#108633",
+            "icon_width_1": 23,
+            "icon_text_1": "Frete grátis para todo Brasil",
+            "icon_name_2": "award",
+            "icon_color_2": "#108633",
+            "icon_width_2": 23,
+            "icon_text_2": "Garantia de 90 dias direto da nossa loja",
+            "icon_name_3": "shield",
+            "icon_color_3": "#108633",
+            "icon_width_3": 20,
+            "icon_text_3": "10 dias para trocas e devoluções",
+            "icon_name_4": "none",
+            "icon_color_4": "",
+            "icon_width_4": 20,
+            "icon_text_4": "",
+            "alignment": "left",
+            "bg_color": "#e8efd6",
+            "padding_bottom": 20
           }
         }
       },
       "block_order": [
         "title",
         "description_HpRcRh",
-        "inventory_countdown",
-        "divider",
-        "icon",
-        "icon-0",
         "form",
-        "timer",
-        "fit-guide",
-        "icon-1",
-        "icon-2"
+        "icon_xxaMab",
+        "icon_aAHWTE",
+        "custom_code_eqfEFf",
+        "custom_code_YyyyPg",
+        "icon_row_3Nrc4n"
       ],
       "settings": {
         "product_sticky_enable": false,
         "image_layout": "stacked",
-        "image_width": "large",
+        "image_width": "standard",
         "product_image_aspect_ratio": false,
         "enable_zoom": true,
         "enable_video_looping": false,

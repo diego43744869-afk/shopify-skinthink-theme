@@ -596,10 +596,10 @@
   "platform_customizations": {
     "custom_css": [
       "/* Esconde o menu no desktop (telas maiores que 749px) */@media screen and (min-width: 750px) {.header__menu-item, .header__inline-menu, nav.header__inline-menu {display: none !important; }}",
-      "/* Garante que o menu mobile apareça em telas pequenas */@media screen and (max-width: 749px) {.header__icon--menu, .mobile-nav-wrapper, details[open] .header__menu-item {display: block !important; }}",
-      "/* Remove o ícone de conta no desktop */@media screen and (min-width: 750px) {.header__icon--account, a[href=\"/account\"] {display: none !important; }}",
-      "/* Logo à esquerda no desktop */@media screen and (min-width: 750px) {.header__heading, .header__heading-link, h1.header__heading {justify-content: flex-start !important; text-align: left !important; margin-left: 0 !important; } .header {justify-content: space-between !important; }}",
-      "/* Logo centralizada no mobile */@media screen and (max-width: 749px) {.header__heading, .header__heading-link, h1.header__heading {justify-content: center !important; text-align: center !important; margin: 0 auto !important; }}",
+      " /* Garante que o menu mobile apareça em telas pequenas */@media screen and (max-width: 749px) {.header__icon--menu, .mobile-nav-wrapper, details[open] .header__menu-item {display: block !important; }}",
+      " /* Remove o ícone de conta no desktop */@media screen and (min-width: 750px) {.header__icon--account, a[href=\"/account\"] {display: none !important; }}",
+      " /* Logo à esquerda no desktop */@media screen and (min-width: 750px) {.header__heading, .header__heading-link, h1.header__heading {justify-content: flex-start !important; text-align: left !important; margin-left: 0 !important; } .header {justify-content: space-between !important; }}",
+      " /* Logo centralizada no mobile */@media screen and (max-width: 749px) {.header__heading, .header__heading-link, h1.header__heading {justify-content: center !important; text-align: center !important; margin: 0 auto !important; }}",
       ".slideshow img {object-fit: contain !important; width: 100%; height: 100%;}",
       ".slideshow img {image-rendering: -webkit-optimize-contrast;}"
     ]

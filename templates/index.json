@@ -198,17 +198,6 @@
         "increase_border_radius": true
       }
     },
-    "section_custom_html_7w87Qy": {
-      "type": "section-custom-html",
-      "disabled": true,
-      "name": "Custom code",
-      "settings": {
-        "custom_code": "<div id=\"shopify-section-template--19160201101508__section_custom_html_CNEwkk\" class=\"shopify-section\"><style data-shopify=\"\">#CustomCode--template--19160201101508__section_custom_html_CNEwkk {\n    --PT: 0px;\n    --PB: 60px;\n  }</style><section id=\"CustomCode--template--19160201101508__section_custom_html_CNEwkk\" class=\"section-padding\">\n  <div class=\"wrapper--full\">\n    <div class=\"sl-container\">\n  <div class=\"sl-content\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0600/9280/9412/files/Slide_01.jpg?v=1719940148\" alt=\"Slide 1\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0600/9280/9412/files/Slide_02.jpg?v=1719940148\" alt=\"Slide 2\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0600/9280/9412/files/Slide_03.jpg?v=1719940149\" alt=\"Slide 3\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0600/9280/9412/files/Slide_04.jpg?v=1719940148\" alt=\"Slide 4\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0600/9280/9412/files/Slide_01.jpg?v=1719940148\" alt=\"Slide 1\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0600/9280/9412/files/Slide_02.jpg?v=1719940148\" alt=\"Slide 2\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0600/9280/9412/files/Slide_03.jpg?v=1719940149\" alt=\"Slide 3\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0600/9280/9412/files/Slide_04.jpg?v=1719940148\" alt=\"Slide 4\">\n  </div>\n</div>\n\n<style>\n.sl-container {\n  width: 100%;\n  overflow: hidden;\n  position: relative;\n  background: transparent;\n}\n\n.sl-content {\n  display: flex;\n  animation: scroll-slides 20s linear infinite;\n  touch-action: auto;\n}\n\n.sl-content img {\n  width: 412px;\n  height: auto;\n  margin-right: 20px;\n  border-radius: 20px;\n}\n\n@keyframes scroll-slides {\n  0% {\n    transform: translateX(0);\n  }\n  100% {\n    transform: translateX(calc(-412px * 4 - 20px * 4));\n  }\n}\n\n@media only screen and (max-width: 767px) {\n  .sl-content {\n    animation: scroll-slides-mobile 20s linear infinite;\n  }\n\n  .sl-content img {\n    width: 300px;\n  }\n}\n\n@keyframes scroll-slides-mobile {\n  0% {\n    transform: translateX(0);\n  }\n  100% {\n    transform: translateX(calc(-300px * 4 - 20px * 4));\n  }\n}\n</style>\n  </div>\n</section>\n\n</div>",
-        "width": "wrapper--full-padded",
-        "padding_top": 18,
-        "padding_bottom": 60
-      }
-    },
     "section_collection_YYRpYN": {
       "type": "section-collection",
       "name": "Featured collection",
@@ -231,21 +220,11 @@
         "button_color": "btn--secondary",
         "button_style": "btn--solid",
         "button_size": "btn--medium",
-        "bg_color": "",
+        "bg_color": "#ffffff",
         "enable_slider_mobile": false,
         "width": "wrapper--full-padded",
         "padding_top": 60,
         "padding_bottom": 60
-      }
-    },
-    "section_custom_html_gTg3ER": {
-      "type": "section-custom-html",
-      "name": "Custom code",
-      "settings": {
-        "custom_code": "<div id=\"shopify-section-sections--19160193237188__section_custom_html_XMGEpQ\" class=\"shopify-section shopify-section-group-group-footer\"><style data-shopify=\"\">#CustomCode--sections--19160193237188__section_custom_html_XMGEpQ {\n    --PT: 0px;\n    --PB: 0px;\n  }</style><section id=\"CustomCode--sections--19160193237188__section_custom_html_XMGEpQ\" class=\"section-padding\">\n  <div class=\"wrapper--full\">\n    <div class=\"features-bar visible\">\n    <div class=\"feature-item\">\n        <div class=\"icon-title\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0600/9280/9412/files/01._Airplane_Icon_bf0db144-6b7e-44e9-8847-4848e50bb835.svg?v=1720094277\" alt=\"Entrega Garantida\">\n            <strong>Entrega Garantida</strong>\n        </div>\n        <p>Prazo de entrega de 5 à 15 dias úteis.</p>\n    </div>\n    <div class=\"feature-item\">\n        <div class=\"icon-title\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0600/9280/9412/files/02._Like_Icon_c9f430d8-8104-4a10-9667-6567f1a1db61.svg?v=1720094277\" alt=\"Cliente Satisfeito\">\n            <strong>Cliente Satisfeito</strong>\n        </div>\n        <p>Não ficou satisfeito? Devolvemos seu dinheiro sem nenhuma burocracia.</p>\n    </div>\n    <div class=\"feature-item\">\n        <div class=\"icon-title\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0600/9280/9412/files/03._Clients_Icon_2b478e3c-ae7b-4e2c-8d1e-6cfa55329101.svg?v=1720094277\" alt=\"Suporte ao Cliente\">\n            <strong>Suporte ao Cliente</strong>\n        </div>\n        <p>Atendemos de segunda a sábado, das 9h às 18h.</p>\n    </div>\n    <div class=\"feature-item\">\n        <div class=\"icon-title\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0600/9280/9412/files/04._Security_Icon_e1791c27-c305-421f-af40-012e7c6604f1.svg?v=1720094277\" alt=\"Pagamento Seguro\">\n            <strong>Pagamento Seguro</strong>\n        </div>\n        <p>Parceiros seguros e zero acesso às suas informações de pagamento.</p>\n    </div>\n</div>\n\n<style>\n.features-bar {\n    width: 100%;\n    background-color: #013616;\n    display: flex;\n    justify-content: space-around;\n    padding: 80px 5%;\n    opacity: 0;\n    transform: translateY(50px);\n    transition: opacity 1s ease-in-out, transform 1s ease-in-out;\n}\n\n.feature-item {\n    color: white;\n    flex: 1;\n    margin: 0 20px;\n}\n\n.icon-title {\n    display: flex;\n    align-items: center;\n    margin-bottom: 10px;\n}\n\n.icon-title img {\n    vertical-align: middle;\n    margin-right: 7px;\n    width: 20px;\n    height: 20px;\n    margin-bottom: 5px;\n}\n\n.icon-title strong {\n    font-size: 16px;\n    margin: 0;\n}\n\n.feature-item p {\n    font-size: 13px;\n    margin-top: 5px;\n    text-align: left;\n}\n\n@media screen and (max-width: 768px) {\n    .features-bar {\n        flex-direction: column;\n        align-items: center;\n        padding: 60px 5%;\n    }\n\n    .feature-item {\n        text-align: center;\n        margin: 20px 0;\n    }\n\n    .icon-title {\n        flex-direction: column;\n        align-items: center;\n        margin-bottom: 0;\n    }\n\n    .icon-title img {\n        margin: 0 0 10px 0;\n        width: 20px;\n        height: 20px;\n    }\n\n    .feature-item p {\n        text-align: center;\n        margin: 10px 35px 0;\n    }\n}\n\n.features-bar.visible {\n    opacity: 1;\n    transform: translateY(0);\n}\n\n</style>\n\n<script>\n    document.addEventListener(\"DOMContentLoaded\", function() {\n    const observer = new IntersectionObserver(entries => {\n        entries.forEach(entry => {\n            if (entry.isIntersecting) {\n                entry.target.classList.add('visible');\n                observer.unobserve(entry.target);\n            }\n        });\n    });\n\n    document.querySelectorAll('.features-bar').forEach(section => {\n        observer.observe(section);\n    });\n});\n\n</script>\n  </div>\n</section>\n\n</div>",
-        "width": "wrapper--full",
-        "padding_top": 12,
-        "padding_bottom": 0
       }
     }
   },
@@ -254,8 +233,6 @@
     "section_custom_html_xQTTGA",
     "section_collection_trKpaa",
     "section_slideshow_9HNCDG",
-    "section_custom_html_7w87Qy",
-    "section_collection_YYRpYN",
-    "section_custom_html_gTg3ER"
+    "section_collection_YYRpYN"
   ]
 }

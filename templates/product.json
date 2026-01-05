@@ -22,6 +22,34 @@
             "padding_bottom": 16
           }
         },
+        "icon_Vn7jMg": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "dollar-sign",
+            "icon_color": "#057926",
+            "icon_width": 20,
+            "icon_text": "10% de DESCONTO em PIX.",
+            "text_size": 80,
+            "width": "full",
+            "text_alignment": "left",
+            "bg_color": "",
+            "padding_bottom": 0
+          }
+        },
+        "icon_yXW4KD": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "credit-card",
+            "icon_color": "#057926",
+            "icon_width": 20,
+            "icon_text": "Compre em até 6x SEM JUROS no cartão de crédito.",
+            "text_size": 80,
+            "width": "full",
+            "text_alignment": "left",
+            "bg_color": "",
+            "padding_bottom": 0
+          }
+        },
         "form": {
           "type": "form",
           "settings": {
@@ -30,6 +58,62 @@
             "show_payment_button": true,
             "enable_subscriptions_selectors": false,
             "padding_bottom": 26
+          }
+        },
+        "icon_MCFKcH": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "award",
+            "icon_color": "#138d36",
+            "icon_width": 20,
+            "icon_text": "Promoção em Cashback: Compre e receba R$250,00 de volta.",
+            "text_size": 80,
+            "width": "full",
+            "text_alignment": "left",
+            "bg_color": "",
+            "padding_bottom": 0
+          }
+        },
+        "icon_K74dzF": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "truck",
+            "icon_color": "#138d36",
+            "icon_width": 20,
+            "icon_text": "Frete grátis para todo o Brasil.",
+            "text_size": 80,
+            "width": "full",
+            "text_alignment": "left",
+            "bg_color": "",
+            "padding_bottom": 0
+          }
+        },
+        "icon_VX86XE": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "shield",
+            "icon_color": "#138d36",
+            "icon_width": 20,
+            "icon_text": "90 dias de garantia direto da nossa loja.",
+            "text_size": 80,
+            "width": "full",
+            "text_alignment": "left",
+            "bg_color": "",
+            "padding_bottom": 0
+          }
+        },
+        "icon_AMjVnB": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "check",
+            "icon_color": "#138d36",
+            "icon_width": 20,
+            "icon_text": "12 dias para trocas e devoluções.",
+            "text_size": 80,
+            "width": "full",
+            "text_alignment": "left",
+            "bg_color": "",
+            "padding_bottom": 0
           }
         },
         "description_HpRcRh": {
@@ -42,7 +126,13 @@
       },
       "block_order": [
         "title",
+        "icon_Vn7jMg",
+        "icon_yXW4KD",
         "form",
+        "icon_MCFKcH",
+        "icon_K74dzF",
+        "icon_VX86XE",
+        "icon_AMjVnB",
         "description_HpRcRh"
       ],
       "settings": {

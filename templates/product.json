@@ -22,13 +22,6 @@
             "padding_bottom": 16
           }
         },
-        "description_HpRcRh": {
-          "type": "description",
-          "settings": {
-            "enable_full_width": false,
-            "padding_bottom": 20
-          }
-        },
         "form": {
           "type": "form",
           "settings": {
@@ -39,82 +32,18 @@
             "padding_bottom": 26
           }
         },
-        "icon_xxaMab": {
-          "type": "icon",
+        "description_HpRcRh": {
+          "type": "description",
           "settings": {
-            "icon_name": "dollar-sign",
-            "icon_color": "#138d36",
-            "icon_width": 23,
-            "icon_text": "Promoção de Cashback: Compre e receba R$250 de volta",
-            "text_size": 90,
-            "width": "full",
-            "text_alignment": "left",
-            "bg_color": "#ffffff",
-            "padding_bottom": 20
-          }
-        },
-        "icon_aAHWTE": {
-          "type": "icon",
-          "settings": {
-            "icon_name": "check",
-            "icon_color": "",
-            "icon_width": 23,
-            "icon_text": "99 vendidos nas últimas 3 horas",
-            "text_size": 90,
-            "width": "full",
-            "text_alignment": "left",
-            "bg_color": "",
-            "padding_bottom": 20
-          }
-        },
-        "custom_code_eqfEFf": {
-          "type": "custom_code",
-          "settings": {
-            "custom_code": "<style> .installments-wrapper { background: #e8efd6; border-radius: 10px; margin-top: 14px; font-family: Arial, sans-serif; overflow: hidden; } .installments-header { display: flex; justify-content: space-between; align-items: center; padding: 14px; cursor: pointer; font-weight: bold; } .installments-header span { font-size: 18px; transition: transform 0.3s ease; } .installments-wrapper.open .installments-header span { transform: rotate(180deg); } .installments-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; padding: 0 14px; } .installments-wrapper.open .installments-content { max-height: 500px; padding-bottom: 14px; } .installments-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px; font-size: 14px; } .pix-box { margin-top: 12px; background: #dfead0; border-radius: 8px; padding: 10px; display: flex; justify-content: space-between; align-items: center; } .pix-tag { background: #4caf50; color: #fff; font-size: 12px; padding: 4px 8px; border-radius: 6px; font-weight: bold; } </style> <div class=\"installments-wrapper\" onclick=\"this.classList.toggle('open')\"> <div class=\"installments-header\"> <div>Parcelas no cartão</div> <span>▼</span> </div> <div class=\"installments-content\"> <div class=\"installments-grid\"> <div>1x de R$ 397,00 sem juros</div> <div>7x de R$ 63,69</div> <div>2x de R$ 198,50 sem juros</div> <div>8x de R$ 56,53</div> <div>3x de R$ 132,00 sem juros</div> <div>9x de R$ 50,96</div> <div>4x de R$ 106,77</div> <div>10x de R$ 46,51</div> <div>5x de R$ 86,66</div> <div>11x de R$ 42,89</div> <div>6x de R$ 73,25</div> <div>12x de R$ 39,85</div> </div>",
-            "padding_bottom": 0
-          }
-        },
-        "custom_code_YyyyPg": {
-          "type": "custom_code",
-          "settings": {
-            "custom_code": "<style>\n#pix-lock {\n  all: unset;\n  display: block;\n  margin-top: 12px;\n}\n\n#pix-lock .pix-box {\n  background: #e8efd6;\n  border-radius: 10px;\n  padding: 14px;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  font-family: Arial, sans-serif;\n}\n\n#pix-lock .pix-tag {\n  background: #4caf50;\n  color: #ffffff;\n  font-size: 12px;\n  padding: 4px 8px;\n  border-radius: 6px;\n  font-weight: bold;\n}\n\n#pix-lock .pix-value {\n  font-size: 18px;\n  font-weight: bold;\n  color: #1a1a1a;\n}\n</style>\n\n<div id=\"pix-lock\">\n  <div class=\"pix-box\">\n    <div class=\"pix-tag\">PIX 10% OFF</div>\n    <div class=\"pix-value\">R$ 357,30</div>\n  </div>\n</div>",
-            "padding_bottom": 0
-          }
-        },
-        "icon_row_3Nrc4n": {
-          "type": "icon_row",
-          "settings": {
-            "icon_name_1": "truck",
-            "icon_color_1": "#108633",
-            "icon_width_1": 23,
-            "icon_text_1": "Frete grátis para todo Brasil",
-            "icon_name_2": "award",
-            "icon_color_2": "#108633",
-            "icon_width_2": 23,
-            "icon_text_2": "Garantia de 90 dias direto da nossa loja",
-            "icon_name_3": "shield",
-            "icon_color_3": "#108633",
-            "icon_width_3": 20,
-            "icon_text_3": "10 dias para trocas e devoluções",
-            "icon_name_4": "none",
-            "icon_color_4": "",
-            "icon_width_4": 20,
-            "icon_text_4": "",
-            "alignment": "left",
-            "bg_color": "#e8efd6",
+            "enable_full_width": true,
             "padding_bottom": 20
           }
         }
       },
       "block_order": [
         "title",
-        "description_HpRcRh",
         "form",
-        "icon_xxaMab",
-        "icon_aAHWTE",
-        "custom_code_eqfEFf",
-        "custom_code_YyyyPg",
-        "icon_row_3Nrc4n"
+        "description_HpRcRh"
       ],
       "settings": {
         "product_sticky_enable": false,
@@ -164,72 +93,10 @@
         "padding_top": 60,
         "padding_bottom": 60
       }
-    },
-    "section_text_pBzXTD": {
-      "type": "section-text",
-      "blocks": {
-        "heading_KU6Xe8": {
-          "type": "heading",
-          "settings": {
-            "text": "<p><strong>ROLE PARA BAIXO SE </strong></p><p><strong>VOCÊ ESTA CANSADO</strong></p>",
-            "size": 220,
-            "heading_highlight_type": "alternate-font",
-            "highlight_color": "#ffffff",
-            "highlight_text_color": "#0b401a"
-          }
-        },
-        "heading_weYG8X": {
-          "type": "heading",
-          "settings": {
-            "text": "<p><strong>DE RASPAR AS SUAS </strong></p><p><strong>BOL4S COM GILETES!</strong></p>",
-            "size": 140,
-            "heading_highlight_type": "alternate-font",
-            "highlight_color": "#ffffff",
-            "highlight_text_color": "#108633"
-          }
-        }
-      },
-      "block_order": [
-        "heading_KU6Xe8",
-        "heading_weYG8X"
-      ],
-      "name": "Text",
-      "settings": {
-        "text_position": "center",
-        "bg_color": "#ffffff",
-        "gradient": "",
-        "text_color": "text-dark",
-        "width": "wrapper",
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
-    "section_custom_html_UMkbA8": {
-      "type": "section-custom-html",
-      "name": "Custom code",
-      "settings": {
-        "custom_code": "<div class=\"wrapper--full-padded\">\n    <div class=\"v67890-container\">\n  <div class=\"v67890\">\n    <video id=\"video\" controls=\"\">\n      <source src=\"https://cdn.shopify.com/videos/c/o/v/9683655f62054df99a3d1e01ba64738f.mov\">\n      Seu navegador não suporta o elemento de vídeo.\n    </video>\n    <div class=\"o54321\" id=\"video-overlay\" onclick=\"playVideo()\" style=\"display: none;\"></div>\n  </div>\n</div>\n\n<script>\n  function playVideo() {\n    var video = document.getElementById('video');\n    var overlay = document.getElementById('video-overlay');\n    video.play();\n    overlay.style.display = 'none';\n  }\n</script>\n\n<style>\n  .v67890-container {\n    margin-left: 5%;\n    margin-right: 5%;\n  }\n\n  .v67890 {\n    position: relative;\n    padding-bottom: 56.25%; /* 16:9 aspect ratio */\n    height: 0;\n    overflow: hidden;\n    width: 100%;\n    background: #000!important;\n    margin: 0 auto;\n    border-radius: 10px;\n    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n  }\n\n  .v67890 video {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    border: 0;\n    border-radius: 10px;\n  }\n\n  .o54321 {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background: rgba(0, 0, 0, 0.1);\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    cursor: pointer;\n    border-radius: 10px;\n    transition: background 0.3s ease;\n  }\n\n  .o54321:hover {\n    background: rgba(0, 0, 0, 0.3);\n  }\n\n  .o54321::before {\n    content: '';\n    display: block;\n    width: 60px;\n    height: 60px;\n    background: url('https://image.flaticon.com/icons/svg/727/727245.svg') no-repeat center center;\n    background-size: contain;\n  }\n</style>\n  </div>",
-        "width": "wrapper",
-        "padding_top": 100,
-        "padding_bottom": 60
-      }
-    },
-    "section_custom_html_343RPg": {
-      "type": "section-custom-html",
-      "name": "Custom code",
-      "settings": {
-        "custom_code": "<div id=\"shopify-section-template--19160248910020__description_info_WaQWMM\" class=\"shopify-section\"><style data-shopify=\"\">#CustomCode--template--19160248910020__description_info_WaQWMM .bnrX2 { --bginfo: #010605; }#CustomCode--template--19160248910020__description_info_WaQWMM .bnrX2 {\n    background-image: url('//neresbrasil.com.br/cdn/shop/files/Banner_02_Produto_01_92bab7fe-3e25-48e8-a576-464eef5bd2ec_copiar.webp?v=1759785319');\n  }\n\n  @media (max-width: 768px) {\n    #CustomCode--template--19160248910020__description_info_WaQWMM .bnrX2 {\n      background-image: url('//neresbrasil.com.br/cdn/shop/files/Banner_02_Produto_01_Mobile_02_copiar_1239c208-fe41-4322-84e4-f8e60990841c.webp?v=1759785447');\n    }\n  }</style><section id=\"CustomCode--template--19160248910020__description_info_WaQWMM\" class=\"section-padding middle-left\">\n  <div class=\"wrapper--full\">\n    <div class=\"align--middle-left bnrX2\" id=\"CustomCode--template--19160248910020__description_info_WaQWMM-bnrX2\" style=\"background-size: 109.528%; background-position: center center;\">\n      <div class=\"cntY4\">\n        <div class=\"flxCt\"><img src=\"//neresbrasil.com.br/cdn/shop/files/01.Shield_Icon_86123028-500e-4ff5-9312-7478d439d8d3.svg?v=1720210048\"><h1>Dê adeus aos cortes e beliscões indesejados</h1>\n        </div>\n        <p>A BarberPro Intimus 2.0 foi desenvolvida com Tecnologia No-Cut (À Prova de Cortes) ou seja, NUNCA mais você terá medo ao aparar as partes íntimas do seu corpo. Até nas partes mais sensíveis você terá a segurança de se raspar sem sofrer aquele beliscões!</p>\n        <div class=\"info-button\"></div>\n      </div>\n    </div>\n\n    <style>\n      .bnrX2 {\n        position: relative;\n        width: 100%;\n        height: 100vh;\n        background-size: cover;\n        background-position: center;\n        background-repeat: no-repeat;\n        background-color: var(--bginfo);\n        display: flex;\n        padding: 5%;\n        overflow: hidden;\n        transition: background-size 0.5s ease-out;\n      }\n\n      .cntY4 {\n        color: #F0EED7;\n        max-width: 650px;\n        border-radius: 10px;\n        margin: 0 5%;\n      }\n\n      .cntY4 img {\n        width: 70px;\n        margin-right: 25px;\n      }\n\n      .cntY4 h1 {\n        color: #138D36;\n        margin: 0;\n        font-size: 44px;\n        text-transform: uppercase;\n        line-height: 2.7rem;\n      }\n\n      .cntY4 p {\n        margin: 10px 0 0;\n        font-size: 16px;\n      }\n\n      .flxCt {\n        display: flex;\n        align-items: center;\n        margin-bottom: 0;\n      }\n      \n      .info-button {\n        margin-top: -1px;\n        text-align: center;\n        padding: 40px 0 0px;\n        margin-bottom: -20px;\n      }\n\n      /* Alignment styles based on text_position */\n      .top-left .cntY4,\n      .middle-left .cntY4,\n      .bottom-left .cntY4 {\n        text-align: left;\n      }\n\n      .top-center .cntY4,\n      .middle-center .cntY4,\n      .bottom-center .cntY4 {\n        text-align: center;\n      }\n\n      .top-right .cntY4,\n      .middle-right .cntY4,\n      .bottom-right .cntY4 {\n        text-align: right;\n      }\n\n      /* Align button based on text_position */\n      .top-left .info-button,\n      .middle-left .info-button,\n      .bottom-left .info-button {\n        text-align: left;\n      }\n\n      .top-center .info-button,\n      .middle-center .info-button,\n      .bottom-center .info-button {\n        text-align: center;\n      }\n\n      .top-right .info-button,\n      .middle-right .info-button,\n      .bottom-right .info-button {\n        text-align: right;\n      }\n\n      /* Align flxCt based on text_position */\n      .top-left .flxCt,\n      .middle-left .flxCt,\n      .bottom-left .flxCt {\n        justify-content: flex-start;\n      }\n\n      .top-center .flxCt,\n      .middle-center .flxCt,\n      .bottom-center .flxCt {\n        justify-content: center;\n      }\n\n      .top-right .flxCt,\n      .middle-right .flxCt,\n      .bottom-right .flxCt {\n        justify-content: flex-end;\n      }\n\n      /* Ensure paragraphs align correctly */\n      .top-left p,\n      .middle-left p,\n      .bottom-left p {\n        text-align: left;\n      }\n\n      .top-center p,\n      .middle-center p,\n      .bottom-center p {\n        text-align: center;\n      }\n\n      .top-right p,\n      .middle-right p,\n      .bottom-right p {\n        text-align: right;\n      }\n\n      @media (min-width: 769px) and (max-width: 1124px) {\n        .cntY4 {\n          max-width: 500px;\n        }\n        .cntY4 h1 {\n          font-size: 32px;\n          line-height: 2rem;\n        }\n        .cntY4 img {\n          width: 52px;\n        }\n        .cntY4 p {\n          font-size: 15px;\n        }\n      }\n\n      @media (max-width: 768px) {\n        .bnrX2 {\n          height: auto;\n          min-height: 100vh;\n          background-size: cover;\n          background-position: center;\n          justify-content: center;\n          padding: 0 0 50px 0;\n          align-items: flex-end;\n          position: relative;\n        }\n\n        .cntY4 {\n          max-width: 400px;\n          text-align: center;\n          padding: 10px 25px;\n          padding-bottom: 30px;\n          background: none;\n          margin: 0;\n          display: flex;\n          flex-direction: column;\n          align-items: center;\n          justify-content: center;\n          position: absolute;\n          bottom: 45px;\n        }\n\n        .cntY4 img {\n          width: 44px;\n          margin-right: 0;\n          margin-bottom: 15px;\n        }\n\n        .cntY4 h1 {\n          text-align: center;\n          font-size: 1.7rem;\n          padding: 0 6%;\n          line-height: 1.6rem;\n          text-transform: uppercase;\n        }\n\n        .cntY4 p {\n          text-align: center;\n          font-size: 14px;\n        }\n\n        .flxCt {\n          flex-direction: column;\n          margin-bottom: 15px;\n          width: 100%;\n          align-items: center;\n        }\n\n        .info-button {\n          text-align: center;\n          width: 100%;\n        }\n\n        .btn123 {\n          width: 100% !important;\n        }\n      }\n\n      .align--top-left {\n        align-items: flex-start;\n        justify-content: flex-start;\n        text-align: left;\n      }\n\n      .align--top-center {\n        align-items: flex-start;\n        justify-content: center;\n        text-align: center;\n      }\n\n      .align--top-right {\n        align-items: flex-start;\n        justify-content: flex-end;\n        text-align: left;\n      }\n      @media only screen and (min-width: 768px) {\n      .align--top-right {\n        text-align: right;\n      }\n      @media only screen and (min-width: 768px) {\n        .align--top-right {\n          text-align: right;\n        }\n      }\n\n      .align--middle-left {\n        align-items: center;\n        justify-content: flex-start;\n        text-align: left;\n      }\n\n      .align--middle-center,\n      .align--middle-split {\n        align-items: center;\n        justify-content: center;\n        text-align: center;\n      }\n\n      .align--middle-right {\n        align-items: center;\n        justify-content: flex-end;\n        text-align: left;\n      }\n      @media only screen and (min-width: 768px) {\n        .align--middle-right {\n          text-align: right;\n        }\n      }\n\n      .align--bottom-left {\n        align-items: flex-end;\n        justify-content: flex-start;\n        text-align: left;\n      }\n\n      .align--bottom-center {\n        align-items: flex-end;\n        justify-content: center;\n        text-align: center;\n      }\n\n      .align--bottom-right {\n        align-items: flex-end;\n        justify-content: flex-end;\n        text-align: left;\n      }\n      @media only screen and (min-width: 768px) {\n        .align--bottom-right {\n          text-align: right;\n        }\n      }\n\n      @media (max-width: 600px) {\n        .btn123 {\n          width: 100% !important;\n        }\n      }\n    </style>\n\n<script>\n  document.addEventListener('DOMContentLoaded', function() {\n    const zoomEffectEnabled = true;\n    if (zoomEffectEnabled) {\n      document.addEventListener('scroll', function() {\n        const bnrX2 = document.getElementById('CustomCode--template--19160248910020__description_info_WaQWMM-bnrX2');\n        const rect = bnrX2.getBoundingClientRect();\n        const windowHeight = window.innerHeight;\n        const elementTop = rect.top;\n        const elementHeight = rect.height;\n        const elementBottom = rect.bottom;\n        \n        if (elementTop < windowHeight && elementBottom > 0) {\n          const middleOfWindow = windowHeight / 2;\n          const middleOfElement = elementTop + elementHeight / 2;\n          const distanceToMiddle = Math.abs(middleOfWindow - middleOfElement);\n          const maxDistance = windowHeight / 2 + elementHeight / 2;\n\n          const progress = Math.max(0, 1 - distanceToMiddle / maxDistance);\n          const zoom = 100 + progress * 10; // Zoom range from 100% to 110%\n\n          bnrX2.style.backgroundSize = `${zoom}%`;\n          bnrX2.style.backgroundPosition = 'center'; // Center the background\n        } else {\n          bnrX2.style.backgroundSize = '100%';\n          bnrX2.style.backgroundPosition = 'center'; // Reset background position\n        }\n      });\n    }\n  });\n</script>\n\n  </div>\n</section>\n\n\n</div>",
-        "width": "wrapper",
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
     }
   },
   "order": [
     "product",
-    "related-products",
-    "section_text_pBzXTD",
-    "section_custom_html_UMkbA8",
-    "section_custom_html_343RPg"
+    "related-products"
   ]
 }

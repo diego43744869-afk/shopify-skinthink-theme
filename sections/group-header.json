@@ -72,7 +72,7 @@
         "border_opacity": 50,
         "logo_not_home": "shopify://shop_images/Logotipo_Neres.svg",
         "logo_max_width": 70,
-        "main-menu": "main-menu",
+        "main-menu": "menu",
         "main_menu_secondary": "",
         "show_images": false,
         "image_aspect_ratio": 1.1,

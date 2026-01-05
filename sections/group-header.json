@@ -98,9 +98,9 @@
         "menu": {
           "type": "menu",
           "settings": {
-            "mobile_menu_linklist": "main-menu",
+            "mobile_menu_linklist": "menu",
             "text_size": 100,
-            "show_images": true,
+            "show_images": false,
             "image_aspect_ratio": 0.5,
             "highlight_item": "Sale",
             "enable_custom_badge": false,

@@ -18,65 +18,55 @@
           "type": "link",
           "settings": {
             "alignment": "text-left",
-            "menu": "main-menu",
-            "title": "SHOP",
-            "column_width": "15"
+            "menu": "rodap",
+            "title": "",
+            "column_width": "25"
           }
         },
-        "link": {
-          "type": "link",
+        "text_zL4GrT": {
+          "type": "text",
           "settings": {
             "alignment": "text-left",
-            "menu": "",
-            "title": "INFO",
-            "column_width": "15"
-          }
-        },
-        "link-0": {
-          "type": "link",
-          "settings": {
-            "alignment": "text-left",
-            "menu": "",
-            "title": "SOCIAL",
-            "column_width": "15"
+            "title": "Entre em contato",
+            "footer_text": "<p>Instagram: @neresbrasil<br/>WhatsApp: (47) 99735-1291<br/>E-mail: contato@neresbrasil.com.br<br/>Endereço: Rua Manoel Assino, Brusque-SC<br/>CNPJ: 50.507.478/0001-80<br/></p>",
+            "column_width": "30"
           }
         },
         "newsletter": {
           "type": "newsletter",
           "settings": {
             "alignment": "text-left",
-            "title": "JOIN OUR #EGOSYSTEM",
+            "title": "",
             "uppercase_heading": true,
-            "heading_size": 160,
-            "text": "<p><strong>Enjoy 10% off your first order </strong>and step into our system—where rituals, rewards, and real skin support come full circle.</p>",
-            "button_text": "Subscribe",
+            "heading_size": 140,
+            "text": "<p>Cadastre-se para receber <strong>promoções exclusivas.</strong></p>",
+            "button_text": "",
             "button_color": "btn--white",
             "button_style": "btn--solid",
-            "column_width": "30"
+            "column_width": "33.33"
           }
         }
       },
       "block_order": [
         "link_e66LpG",
-        "link",
-        "link-0",
+        "text_zL4GrT",
         "newsletter"
       ],
       "settings": {
         "show_footer_wave": false,
-        "enable_footer_parallax": true,
-        "increase_border_radius": true,
+        "enable_footer_parallax": false,
+        "increase_border_radius": false,
         "bottom_bar_alignment": "text-left",
-        "show_social_links": true,
-        "enable_follow_on_shop": true,
-        "show_payment_icons": true,
+        "show_social_links": false,
+        "enable_follow_on_shop": false,
+        "show_payment_icons": false,
         "enable_greyscale": true,
         "bottom_menu": "",
         "color_text": "#ffffff",
         "color_bg": "#138d36",
         "color_border": "#ffffff",
-        "show_locale_selector": true,
-        "show_locale_code": true,
+        "show_locale_selector": false,
+        "show_locale_code": false,
         "show_country_selector": false,
         "show_country_name": false,
         "show_country_flag": false,
@@ -84,9 +74,52 @@
         "padding_top": 20,
         "padding_bottom": 10
       }
+    },
+    "footer_minimal_iThaBE": {
+      "type": "footer-minimal",
+      "blocks": {
+        "logo_LxJwcj": {
+          "type": "logo",
+          "settings": {
+            "alignment": "text-left",
+            "image": "shopify://shop_images/Logotipo_Neres_0de11c65-8dca-4ff1-9d70-d0a4266780c5.svg",
+            "logo_width": 120,
+            "show_shop_name": false,
+            "text": "",
+            "column_width": "25"
+          }
+        }
+      },
+      "block_order": [
+        "logo_LxJwcj"
+      ],
+      "name": "Footer Minimal",
+      "settings": {
+        "show_footer_wave": false,
+        "enable_footer_parallax": false,
+        "increase_border_radius": false,
+        "bottom_bar_alignment": "text-left",
+        "show_social_links": false,
+        "enable_follow_on_shop": false,
+        "show_payment_icons": false,
+        "enable_greyscale": true,
+        "bottom_menu": "",
+        "color_text": "#0b0b0b",
+        "color_bg": "#0b0b0b",
+        "color_border": "#0b0b0b",
+        "show_locale_selector": false,
+        "show_locale_code": false,
+        "show_country_selector": false,
+        "show_country_name": false,
+        "show_country_flag": false,
+        "width": "wrapper--full-padded",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
-    "footer"
+    "footer",
+    "footer_minimal_iThaBE"
   ]
 }

@@ -183,10 +183,21 @@
         "padding_top": 60,
         "padding_bottom": 60
       }
+    },
+    "section_custom_html_AHhRaM": {
+      "type": "section-custom-html",
+      "name": "Custom code",
+      "settings": {
+        "custom_code": "<div class=\"faq-wrap\">\n\n  <div class=\"faq-left\">\n    <h2>PERGUNTAS<br>FREQUENTES</h2>\n  </div>\n\n  <div class=\"faq-right\">\n\n    <div class=\"faq-item\">\n      <div class=\"faq-question\">Qual o prazo de entrega?</div>\n      <div class=\"faq-answer\">\n        Nosso prazo de entrega é de 5 a 15 dias úteis.\n      </div>\n    </div>\n\n    <div class=\"faq-item\">\n      <div class=\"faq-question\">\n        Qual a garantia que tenho se eu receber o produto ou não?\n      </div>\n      <div class=\"faq-answer\">\n        Além de trabalharmos com empresas 100% seguras como os Correios,\n        nossa garantia é baseada no Código de Defesa do Consumidor.\n        Em caso de qualquer problema com a entrega, o seu valor é\n        restituído integralmente.\n      </div>\n    </div>\n\n    <div class=\"faq-item\">\n      <div class=\"faq-question\">Se eu não gostar posso devolver?</div>\n      <div class=\"faq-answer\">\n        Confiamos tanto em nosso produto que oferecemos 7 dias de garantia.\n        Se você não gostar, devolvemos seu dinheiro sem burocracia.\n      </div>\n    </div>\n\n    <div class=\"faq-item\">\n      <div class=\"faq-question\">O pagamento é seguro?</div>\n      <div class=\"faq-answer\">\n        Sim! Utilizamos plataformas de pagamento seguras e criptografadas.\n        Não temos acesso a nenhum dado do seu cartão.\n      </div>\n    </div>\n\n  </div>\n</div>\n\n<style>\n.faq-wrap{\n  background:#138D36;\n  padding:80px 5%;\n  display:flex;\n  gap:60px;\n  flex-wrap:wrap;\n}\n\n.faq-left{\n  flex:1;\n  min-width:250px;\n}\n\n.faq-left h2{\n  color:#fff;\n  font-size:56px;\n  line-height:1;\n  font-weight:800;\n  text-transform:uppercase;\n}\n\n.faq-right{\n  flex:2;\n  min-width:300px;\n}\n\n.faq-item{\n  background:#0B3D1E;\n  border-radius:12px;\n  margin-bottom:15px;\n  overflow:hidden;\n}\n\n.faq-question{\n  padding:20px;\n  color:#D7F5A3;\n  font-size:16px;\n  font-weight:600;\n  cursor:pointer;\n  position:relative;\n}\n\n.faq-question::after{\n  content:\"▾\";\n  position:absolute;\n  right:20px;\n  font-size:18px;\n  transition:.3s;\n}\n\n.faq-item.active .faq-question::after{\n  transform:rotate(180deg);\n}\n\n.faq-answer{\n  max-height:0;\n  overflow:hidden;\n  padding:0 20px;\n  color:#CFEAC1;\n  font-size:14px;\n  line-height:1.5;\n  transition:max-height .4s ease;\n}\n\n.faq-item.active .faq-answer{\n  max-height:300px;\n  padding-bottom:20px;\n}\n\n@media(max-width:768px){\n  .faq-wrap{\n    padding:50px 20px;\n  }\n\n  .faq-left h2{\n    font-size:36px;\n    text-align:center;\n  }\n}\n</style>\n\n<script>\ndocument.querySelectorAll('.faq-question').forEach(item=>{\n  item.addEventListener('click',()=>{\n    const parent = item.parentElement;\n    parent.classList.toggle('active');\n  });\n});\n</script>",
+        "width": "wrapper--full",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
     "product",
-    "related-products"
+    "related-products",
+    "section_custom_html_AHhRaM"
   ]
 }

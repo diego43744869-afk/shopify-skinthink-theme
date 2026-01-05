@@ -9,7 +9,7 @@
  */
 {
   "current": {
-    "color_body_bg": "#0d0d0d",
+    "color_body_bg": "#ffffff",
     "color_headings": "#0d0d0d",
     "color_body_text": "#138d36",
     "color_accent": "#ffffff",
@@ -88,7 +88,7 @@
     "upsells_image_width": 30,
     "upsells_bg_color": "#f7f6f4",
     "loading_image_width": 150,
-    "show_spacer_lines": false,
+    "show_spacer_lines": true,
     "line_thickness": "bold",
     "show_rounded_corners": true,
     "increase_border_radius": true,

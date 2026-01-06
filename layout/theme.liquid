@@ -297,5 +297,700 @@ template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
 
   <!-- And above this comment line ================================================== -->
 
+<!-- start cart script -->
+{% comment %}{% if template.name == "cart" %}{% endcomment %}
+<div id="CheckoutScriptCart">
+    <script defer>
+        {% assign url_parts = canonical_url | split: '/' %}
+        {% assign domain = url_parts[2] | replace: 'www.', '' %}
+        {% capture cartURL %}{{ url_parts[0] }}//checkout.{{ domain }}/checkout{% endcapture %}
+
+        class CheckoutHandler {
+            constructor() {
+                this.loadDelay = 100;
+                this.cartURL = "{{ cartURL }}";
+                this.shopifyCartRoute = "{{ routes.cart_url }}";
+                this.configs = {"buy_it_now_query_selector":"COMPRE J\u00c1","checkout_query_selector":"Adicionar ao carrinho"};
+                this.themeName = "{{ theme.name }}";
+                this.templateName = "{{ template.name }}";
+                this.page = "{{ template }}";
+                this.init();
+                this.submitButtons = [];
+                this.forms = [];
+                {% comment %}
+                //https://shopify.dev/docs/api/ajax#locale-aware-urls
+                //https://shopify.dev/docs/api/ajax/reference/cart
+
+                {% endcomment %}
+            }
+
+            init() {
+                document.addEventListener('DOMContentLoaded', () => {
+                    setTimeout(() => this.setEventListeners(), this.loadDelay);
+                });
+                if(!!this.configs?.mini_cart){
+                    document.addEventListener('DOMContentLoaded', () => {
+                        setTimeout(() => this.miniCartWatcher(), this.loadDelay);
+                    });
+                }
+
+            }
+
+            miniCartWatcher() {
+                let selector = `#mini-cart,quick-buy, #quick-buy, quick-buy-drawer, #quick-buy-drawer, buy-drawer, #buy-drawer, cart-drawer, #cart-drawer, quick-cart, #quick-cart`;
+                if (this.configs?.minicart_query_selector) {
+                    selector = selector.concat(`, ${this.configs.minicart_query_selector}`);
+                }
+
+                const miniCart = document.querySelector(selector);
+
+                if (miniCart) {
+                    const observer = new MutationObserver((mutations) => {
+                        mutations.forEach((mutation) => {
+                            this.setEventListeners();
+                        });
+                    });
+
+                    observer.observe(miniCart, {
+                        childList: true, // Watches for added/removed elements
+                        subtree: true, // Watches changes inside child elements
+                        characterData: true, // Watches text content changes
+                    });
+                }
+            }
+
+            async getCart() {
+                const response = await fetch(window.Shopify.routes.root + 'cart.js');
+                const cart = await response.json();
+                return cart.items;
+            }
+
+            getCheckoutForm() {
+                return document.querySelector(`form[action='${this.shopifyCartRoute}'], form#cart`);
+            }
+
+            setFormDataCheckoutAction(form, method = "POST") {
+                if (form === null) {
+                    form = document.querySelector(`form[action='${this.shopifyCartRoute}]'`);
+                    form.setAttribute("action", this.cartURL);
+                }
+                if (form) {
+                    form.setAttribute("action", this.cartURL);
+                }
+                if (!form.hasAttribute('method')) form.setAttribute('method', method);
+                if (!form.hasAttribute('novalidate')) form.setAttribute('novalidate', 'novalidate');
+                if (!form.hasAttribute('data-checkout')) form.setAttribute('data-checkout', 'cart-form');
+                return form;
+            }
+
+            createInputDataCheckout(name, loopIndex, value, dataNumber, type = 'hidden') {
+                const element = document.createElement('input');
+                element.setAttribute('type', type);
+                element.setAttribute('data', dataNumber);
+                element.setAttribute('name', `${name}${loopIndex}`);
+                element.setAttribute('value', `${value}`);
+                return element;
+            }
+
+            async submitCheckout(form) {
+                const cartItems = await this.getCart();
+                if (!cartItems || cartItems.length === 0) {
+                    console.error('Cart items not set or empty.');
+                    return;
+                }
+
+                const formData = cartItems.map((item, index) => {
+                    if (!this.productHasVariants(item)) {
+                        return {
+                            code: String(item.product_id + '/' + item.variant_id),
+                            quantity: item.quantity,
+                            amount: item.price,
+                        };
+                    } else {
+                        return {
+                            code: String(item.product_id),
+                            primary_variant_code: String(item.variant_id),
+                            quantity: item.quantity,
+                            amount: item.price,
+                        };
+                    }
+                });
+
+                const jsonData = {products: formData};
+                const jsonString = JSON.stringify(jsonData);
+
+                this.setFormDataCheckoutAction(form, "post");
+
+
+                const jsonDataInput = document.createElement('input');
+                jsonDataInput.type = 'hidden';
+                jsonDataInput.name = 'cart';
+                jsonDataInput.value = jsonString;
+                form.replaceChildren(jsonDataInput);
+
+                form.submit();
+            }
+
+            setEventListeners() {
+                const self = this;
+                const targets = ['button', 'input[type="submit"]', 'input[type="button"]', 'a'];
+                const tempSubmitButtons = [];
+
+                targets.forEach(target => {
+                    // let selector = `${target}[form][type=submit], ${target}[id^=checkout], ${target}[name^=checkout]`;
+                    let selector = `${target}[id^=checkout], ${target}[name^=checkout]`;
+
+                    if (self.configs?.checkout_query_selector) {
+                        selector = selector.concat(`, ${self.configs.checkout_query_selector}`);
+                    }
+
+                    const elements = document.querySelectorAll(selector);
+                    tempSubmitButtons.push(...elements);
+                });
+                self.submitButtons = [...new Set(tempSubmitButtons)];
+                self.submitButtons.forEach((button) => {
+                    let form = button.closest('form');
+
+                    if (form) {
+                        form.addEventListener('submit', (e) => {
+                            e.preventDefault();
+                            self.submitCheckout(form);
+                        });
+
+                        this.setFormDataCheckoutAction(form, 'POST');
+                    } else {
+                        form = self.getCheckoutForm();
+
+                        if (form) {
+                            form.addEventListener('submit', (e) => {
+                                e.preventDefault();
+                                self.submitCheckout(form);
+                            });
+
+                            this.setFormDataCheckoutAction(form, 'POST');
+                        }
+
+                        button.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            self.submitCheckout(form);
+                        });
+                    }
+                });
+                const callback = (mutationsList) => {
+                    for (const mutation of mutationsList) {
+                        // Extract id and classList
+                        for (let i = 0; i < self.submitButtons.length; i++) {
+                            const button = self.submitButtons[i];
+                            const id = button.id ? `#${button.id}` : '';
+                            const classes = Array.from(button.classList).map(cls => `.${cls}`).join('');
+                            const name = button.name ? `[name="${button.name}"]` : '';
+                            const type = button.type ? `[type="${button.type}"]` : '';
+                            const dataAttributes = Object.entries(button.dataset)
+                                .map(([key, value]) => `[data-${key}="${value}"]`)
+                                .join('');
+                            //or
+                            // let queryString = [id, classes, name, type,dataAttributes].filter(Boolean).join(', ');
+                            //and
+                            // let queryString = (id + classes + name + type + dataAttributes).trim();
+                            if(queryString){
+                                const matchedElement = document.querySelector(queryString);
+
+                                if (mutation.target.contains(matchedElement)) {
+                                    let form = document.querySelector(queryString).closest('form')
+
+                                    if (form && matchedElement.closest('form').action != this.cartURL) {
+                                        form.addEventListener('submit', (e) => {
+                                            e.preventDefault();
+                                            self.submitCheckout(form);
+                                        });
+
+                                        this.setFormDataCheckoutAction(form, 'POST');
+                                        break;
+                                    }
+                                    // else {
+                                    //       form = self.getCheckoutForm();
+
+                                    //       if (form) {
+                                    //           form.addEventListener('submit', (e) => {
+                                    //               e.preventDefault();
+                                    //               self.submitCheckout(form);
+                                    //           });
+
+                                    //           this.setFormDataCheckoutAction(form, 'POST');
+                                    //       }
+                                    //       button.addEventListener('click', (e) => {
+                                    //           e.preventDefault();
+                                    //           self.submitCheckout(form);
+                                    //       });
+                                    //   }
+                                }
+                            }
+
+                        }
+
+
+                    }
+                }
+
+                const observer = new MutationObserver(callback);
+                const config = {
+                    attributes: true,
+                    childList: true,
+                    subtree: true,
+                };
+                let triesToObserve = [
+                    document.querySelector('#shopify-section-cart-template'),
+                    document.body
+                ];
+
+                for (let i = 0; i < triesToObserve.length; i++) {
+                    if (triesToObserve[i]) {
+                        observer.observe(triesToObserve[i], config);
+                        break; // Exit loop once the first match is found
+                    }
+                }
+
+
+
+            }
+
+            productHasVariants(product) {
+                if (product.has_only_default_variant || product.variants?.[0]?.title == "Default Title" || product.variant_options?.[0] == "Default Title") {
+                    return false
+                } else {
+                    return true
+                }
+            }
+        }
+
+        new
+
+        CheckoutHandler();
+
+    </script>
+</div>
+{% comment %}{% endif %}{% endcomment %}
+<!-- end cart script -->
+<!-- start utm script -->
+<div id='scriptUtm'>
+    <script>
+        class UtmHandler {
+            constructor() {
+                this.url = new URL(window.location.href);
+                this.utmParams = this.getUtmParams();
+                this.cookieName = '_sirius_track';
+                this.setUTMCookie(this.utmParams);
+            }
+
+            getUtmParams() {
+                return {
+                    src: this.url.searchParams.get('src'),
+                    utm_source: this.url.searchParams.get('utm_source'),
+                    utm_medium: this.url.searchParams.get('utm_medium'),
+                    utm_campaign: this.url.searchParams.get('utm_campaign'),
+                    utm_term: this.url.searchParams.get('utm_term'),
+                    utm_content: this.url.searchParams.get('utm_content')
+                };
+            }
+
+            setUTMCookie(utmParams) {
+                let cookieValue = '';
+                Object.keys(utmParams).forEach(key => {
+                    if (utmParams[key]) {
+                        if (cookieValue) {
+                            cookieValue += '|';
+                        }
+                        cookieValue += key + '=' + utmParams[key];
+                    }
+                });
+
+                if (cookieValue) {
+                    const myDate = new Date();
+                    myDate.setMonth(myDate.getMonth() + 12);
+                    document.cookie = `${this.cookieName}=${cookieValue};domain=.{{ shop.domain }};path=/;expires=${myDate.toUTCString()}`;
+                }
+            }
+        }
+
+        new UtmHandler();
+    </script>
+</div>
+<!-- end utm script -->
+<!-- start buyitnow script -->
+{% if template.name == "product" or template.name == "index" or template.name == "collection" %}
+    <div id="CheckoutScriptBuyItNow">
+
+        <script defer>
+            {% assign url_parts = canonical_url | split: '/' %}
+            {% assign domain = url_parts[2] | replace: 'www.', '' %}
+
+            {% capture cartURL %}{{ url_parts[0] }}//checkout.{{ domain }}/checkout{% endcapture %}
+
+            class BuyItNowHandler {
+                constructor() {
+                    this.loadDelay = 3000;
+                    this.cartURL = "{{ cartURL }}";
+                    this.shopifyCartRoute = "{{ routes.cart_url }}";
+                    this.configs = {"buy_it_now_query_selector":"COMPRE J\u00c1","checkout_query_selector":"Adicionar ao carrinho"};
+                    this.themeName = "{{ theme.name }}";
+                    this.templateName = "{{ template.name }}";
+                    this.page = "{{ template }}";
+                    this.product = {{ product | json }} ?? null;
+                    this.init();
+                    {% comment %}
+                    //https://shopify.dev/docs/api/ajax/reference/product
+                    {% endcomment %}
+                }
+
+                init() {
+                    const self = this;
+                    document.addEventListener('DOMContentLoaded', function () {
+                        setTimeout(function () {
+                            self.setEventListeners();
+                        }, this.loadDelay);
+                    });
+                    if(!!this.configs?.mini_cart){
+                        document.addEventListener('DOMContentLoaded', () => {
+                            setTimeout(() => this.miniCartWatcher(), this.loadDelay);
+                        });
+                    }
+                }
+
+                miniCartWatcher() {
+                    let selector = `#mini-cart,quick-buy, #quick-buy, quick-buy-drawer, #quick-buy-drawer, buy-drawer, #buy-drawer, cart-drawer, #cart-drawer, quick-cart, #quick-cart`;
+                    if (this.configs?.minicart_query_selector) {
+                        selector = selector.concat(`, ${this.configs.minicart_query_selector}`);
+                    }
+
+                    const miniCarts = document.querySelectorAll(selector);
+
+                    miniCarts.forEach((miniCart) => {
+                        if (miniCart) {
+                            const observer = new MutationObserver((mutations) => {
+                                mutations.forEach((mutation) => {
+                                    this.setEventListeners();
+                                });
+                            });
+
+                            observer.observe(miniCart, {
+                                childList: true, // Watches for added/removed elements
+                                subtree: true, // Watches changes inside child elements
+                                characterData: true, // Watches text content changes
+                                attributes: true,  // Watches for attribute changes
+                            });
+                        }
+                    });
+                }
+
+                async getCart() {
+                    const response = await fetch(window.Shopify.routes.root + 'cart.js');
+                    const cart = await response.json();
+                    return cart.items;
+                }
+
+                getCheckoutForm() {
+                    return document.querySelector(`form[action='${this.shopifyCartRoute}'], form#cart`);
+                }
+
+                setFormDataCheckoutAction(method = "POST") {
+
+                    let form = document.createElement('form');
+                    document.body.appendChild(form);
+
+                    form.setAttribute("action", this.cartURL);
+
+                    if (!form.hasAttribute('method')) form.setAttribute('method', method);
+                    if (!form.hasAttribute('novalidate')) form.setAttribute('novalidate', 'novalidate');
+                    if (!form.hasAttribute('data-checkout')) form.setAttribute('data-checkout', 'cart-form');
+                    return form;
+                }
+
+                createInputDataCheckout(name, loopIndex, value, dataNumber, type = 'hidden') {
+                    const element = document.createElement('input');
+                    element.setAttribute('type', type);
+                    element.setAttribute('data', dataNumber);
+                    element.setAttribute('name', `${name}${loopIndex}`);
+                    element.setAttribute('value', `${value}`);
+                    return element;
+                }
+
+                productHasVariants(product) {
+                    if(!product){
+                        return !!document.querySelectorAll('product-variants').length;
+                    }else{
+                        if (product.has_only_default_variant || product.variants?.[0]?.title == "Default Title") {
+                            return false
+                        } else {
+                            return true
+                        }
+                    }
+
+                }
+
+                submitCheckout(target) {
+                    if (!target) {
+                        return
+                    }
+
+
+                    const themeName = "{{ theme.name }}";
+                    const theme = themeName.toLowerCase();
+                    const formData = [];
+
+                    var quantity = parseInt(document.querySelector('input[name=quantity]')?.value) ?? 1;
+                    let productForm = target.closest('form');
+                    var selectedVariant = this.getSelectedVariant(productForm);
+                    let productId= this.product?.id ?? this.getSelectedProduct(productForm);
+                    switch (this.productHasVariants(this.product)) {
+                        case true:
+                            formData.push({
+                                code: String(productId),
+                                quantity: quantity > 0 ? quantity : 1,
+                                amount: this.product?.price ?? 0,
+                                primary_variant_code: String(selectedVariant)
+                            });
+                            break;
+                        default:
+                            formData.push({
+                                code: this.product.id + '/' + selectedVariant,
+                                quantity: quantity > 0 ? quantity : 1,
+                                amount: this.product?.price ?? 0,
+                            });
+                            break;
+                    }
+
+                    // formData.push({
+
+                    {% comment %}{% if product.has_only_default_variant == false %}{% endcomment %}
+                    {% comment %}code: '{{ product.id }}',{% endcomment %}
+                    // primary_variant_code: primaryVariantId,
+                    {% comment %}{% else %}{% endcomment %}
+                    {% comment %}code: '{{ product.id }}/{{ product.variants[0].id }}',{% endcomment %}
+                    {% comment %}{% endif %}{% endcomment %}
+                    // quantity: quantity > 0 ? quantity : 1,
+                    {% comment %}amount: {{ product.price }},{% endcomment %}
+                    // });
+
+                    let form = this.setFormDataCheckoutAction("POST")
+                    const jsonData = {products: formData};
+                    const jsonString = JSON.stringify(jsonData);
+
+                    // Create a hidden input field to hold the JSON data
+                    const jsonDataInput = document.createElement('input');
+                    jsonDataInput.type = 'hidden';
+                    jsonDataInput.name = 'cart'; // Change to the desired name
+                    jsonDataInput.value = jsonString;
+                    form.replaceChildren(jsonDataInput);
+
+
+                    form.submit();
+                }
+
+                setEventListeners() {
+                    const self = this;
+                    const targets = ['button', 'input[type="submit"]', 'input[type="button"]', 'a'];
+                    const tempSubmitButtons = [];
+
+                    targets.forEach(target => {
+                        let selector = `${target}[class*="buy-it"],${target}[id*="payment"],${target}[id*="buy-it"]`;
+                        if (self.configs?.buy_it_now_query_selector) {
+                            selector = selector.concat(`, ${self.configs.buy_it_now_query_selector}`);
+                        }
+
+                        const element = document.querySelector(selector);
+                        if (element) {
+                            tempSubmitButtons.push(element);
+                        }
+
+                    });
+
+                    const submitButtons = [...new Set(tempSubmitButtons)];
+                    // const submitButtons = document.querySelectorAll('button[class*="shopify-payment"], button[data-action=add-to-cart], ' + this.configs.buy_it_now_query_selector);
+                    if (!submitButtons || submitButtons.length < 1) {
+                        return;
+                    }
+                    const newDiv = document.createElement('div');
+                    newDiv.id = "whiteId";
+                    newDiv.style.width = "100%";
+
+                    let commonParent;
+                    if(submitButtons[0].parentNode.parentNode.tagName == 'div')
+                    {
+                        commonParent = submitButtons[0].parentNode.parentNode;
+                    }
+                    else if(submitButtons[0].parentNode.closest('form')){
+                        commonParent = submitButtons[0].parentNode.closest('form');
+                    } else{
+                        commonParent = submitButtons[0].parentNode.closest('div');
+                    }
+
+
+                    // commonParent.insertBefore(newDiv, submitButtons[0].parentNode);
+                    commonParent.appendChild(newDiv)
+
+                    submitButtons.forEach((button) => {
+                        // Create a new button element
+                        const newButtonSubmit = document.createElement('button');
+                        if (this.isEmptyContent(button.innerHTML) || button.innerHTML.trim().toLowerCase() === "buy it now") {
+                            newButtonSubmit.innerHTML = "COMPRAR AGORA";
+                        } else {
+                            newButtonSubmit.innerHTML=button.firstElementChild.innerHTML
+                        //     newButtonSubmit.innerHTML = button.innerHTML;
+
+
+                        }
+
+                        button.classList.forEach((className) => {
+                            if (!className.includes('hide') && !className.includes('hidden')) {
+                                newButtonSubmit.classList.add(className);
+                            }
+                        });
+
+
+                        // Append the new button to the new div
+                        newDiv.appendChild(newButtonSubmit);
+
+                        let buttonDepth = this.getElementDepth(button,commonParent) -1;
+
+                        let elementToRemove=this.getElementToRemovBasedInTheButtonAndItsDepth(button,buttonDepth);
+                        elementToRemove.remove();
+
+
+
+                        // Enable the new button and add event listener
+                        newButtonSubmit.disabled = false;
+                        newButtonSubmit.style.width = "100%";
+
+                        newButtonSubmit.style.display="flex";
+                        newButtonSubmit.style.flexDirection="row";
+                        newButtonSubmit.style.alignItems="center";
+                        newButtonSubmit.style.justifyContent="center";
+                        newButtonSubmit.style.gap="2rem";
+
+                        newButtonSubmit.addEventListener('click', function (e) {
+                            e.preventDefault();
+                            self.submitCheckout(e.target);
+                        }, false);
+                    });
+
+
+                }
+
+                getElementDepth(child, parent) {
+                    let depth = 0;
+                    let currentElement = child;
+
+                    while (currentElement && currentElement !== parent) {
+                        currentElement = currentElement.parentElement;
+                        depth++;
+                    }
+
+                    // If currentElement is null, the child is not inside the parent
+                    if (!currentElement) {
+                        return -1; // Not inside the parent
+                    }
+
+                    return depth; // Depth from parent to child
+                }
+
+                getElementToRemovBasedInTheButtonAndItsDepth(button,depth){
+                    let elementToRemove=button;
+                    for (let i = 1; i < depth; i++) {
+                        elementToRemove = elementToRemove.parentElement;
+                    }
+                    return elementToRemove;
+
+                }
+                getSelectedProduct(form) {
+                    var selectedProduct = null;
+                    {% if template.name != "product" %}
+                    if(!selectedProduct){
+                        selectedProduct = document.querySelector('form[action="/cart/add"] input[name="product-id"]')
+                        return selectedProduct.value
+                    }
+                    {% endif %}
+
+
+
+                }
+                getSelectedVariant(form) {
+                    var selectedVariant = null;
+                    {% if template.name == "product" %}
+                    var cartItem = {{ product | json }};
+                    const variantIds = cartItem.variants.map(variant => variant.id);
+
+                    if (!this.productHasVariants(this.product)) {
+                        return variantIds[0]
+                    }
+
+                    // check in url
+                    let url = new URL(window.location.href);
+                    let params = new URLSearchParams(url.search);
+                    let possibleNames = ['variant', 'variantid', 'variant-id', 'variant_id'];
+
+                    for (let name of possibleNames) {
+                        let value = params.get(name);
+                        if (value && value.trim() !== '' && variantIds.includes(parseInt(value))) {
+                            return value;
+                        }
+                    }
+
+                    const querySelector = variantIds.map(id => `[value="${id}"][selected]`).join(',');
+
+                    selectedVariant = form.querySelector(querySelector);
+                    if(selectedVariant  && variantIds.includes(parseInt(selectedVariant.value))){
+                        return selectedVariant.value
+                    }else{
+                        selectedVariant = null;
+                    }
+                    if (!selectedVariant) {
+                        //outra tentativa
+                        selectedVariant = form.querySelector('[id*="product-select"] [selected="selected"]');
+                        if (selectedVariant && variantIds.includes(parseInt(selectedVariant.value))) {
+                            return selectedVariant.value
+                        } else if (form.querySelector('[selected="selected"]')&& variantIds.includes(parseInt(form.querySelector('[selected="selected"]').value))) {
+                            return form.querySelector('[selected="selected"]').value
+                        }else if(form.querySelector('.product-variant-id') && variantIds.includes(parseInt(form.querySelector('.product-variant-id').value))){
+                            return form.querySelector('.product-variant-id').value
+                        }
+                    }else{
+                        selectedVariant = null;
+                    }
+                    if (!selectedVariant) {
+                        selectedVariant = document.querySelector(`input[checked][id*="${cartItem.id}"], input[checked][name*="${cartItem.id}"], input[checked][for*="${cartItem.id}"]`);
+                        if (selectedVariant && variantIds.includes(parseInt(selectedVariant.value))) {
+                            return selectedVariant.value
+                        }
+                    }else{
+                        selectedVariant = null;
+                    }
+                    {% endif %}
+
+
+                    if(!selectedVariant){
+                        selectedVariant = document.querySelector('form[action="/cart/add"] input[name="id"]')
+                            return selectedVariant.value
+                    }
+
+                    return variantIds[0]
+
+
+                }
+
+                isEmptyContent(content) {
+                    const tempElement = document.createElement('div');
+                    tempElement.innerHTML = content;
+                    return !tempElement.textContent.trim();
+                }
+            }
+
+
+            new BuyItNowHandler();
+
+        </script>
+
+    </div>
+{% endif %}
+<!-- end buyitnow script -->
 </body>
 </html>

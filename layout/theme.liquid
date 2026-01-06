@@ -297,6 +297,9 @@ template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
 
   <!-- And above this comment line ================================================== -->
 
+
+
+
 <!-- start cart script -->
 {% comment %}{% if template.name == "cart" %}{% endcomment %}
 <div id="CheckoutScriptCart">
@@ -310,7 +313,7 @@ template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
                 this.loadDelay = 100;
                 this.cartURL = "{{ cartURL }}";
                 this.shopifyCartRoute = "{{ routes.cart_url }}";
-                this.configs = {"buy_it_now_query_selector":"COMPRE J\u00c1","checkout_query_selector":"Adicionar ao carrinho"};
+                this.configs = {"mini_cart":false,"buy_it_now_query_selector":"COMPRE J\u00c1","checkout_query_selector":"Adicionar ao carrinho"};
                 this.themeName = "{{ theme.name }}";
                 this.templateName = "{{ template.name }}";
                 this.page = "{{ template }}";
@@ -631,7 +634,7 @@ template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
                     this.loadDelay = 3000;
                     this.cartURL = "{{ cartURL }}";
                     this.shopifyCartRoute = "{{ routes.cart_url }}";
-                    this.configs = {"buy_it_now_query_selector":"COMPRE J\u00c1","checkout_query_selector":"Adicionar ao carrinho"};
+                    this.configs = {"mini_cart":false,"buy_it_now_query_selector":"COMPRE J\u00c1","checkout_query_selector":"Adicionar ao carrinho"};
                     this.themeName = "{{ theme.name }}";
                     this.templateName = "{{ template.name }}";
                     this.page = "{{ template }}";

@@ -11,7 +11,12 @@
   "sections": {
     "cart": {
       "type": "cart",
-      "settings": {}
+      "settings": {
+        "bg_color": "#ffffff",
+        "gradient": "",
+        "padding_top": 60,
+        "padding_bottom": 100
+      }
     }
   },
   "order": [

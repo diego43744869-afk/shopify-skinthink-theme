@@ -50,7 +50,7 @@
     "final_sale_color": "#138d36",
     "enable_half_width_btn": false,
     "atc_show_product_price": false,
-    "atc_button_color": "btn--primary",
+    "atc_button_color": "btn--secondary",
     "atc_button_style": "btn--solid",
     "atc_button_size": "btn--small",
     "buynow_btn_color": "btn--secondary",
